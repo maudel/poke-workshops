@@ -1,14 +1,11 @@
-# Expo Basics Workshops
+# Expo Basico
+2. Juega un poco con tu nuevo IDE web. Lo utilizaremos para crear nuestra primera aplicación: `PokeApp`. No necesita instalar nada en su computadora, pero instale la aplicación `Expo` en su teléfono móvil - está en AppStore / Google Play.
 
-1. Go to https://snack.expo.io. We encourage you to create an account for easier access to your Expo apps!
+3. El código que ves es una simple pantalla React Native. Puede ejecutarlo en su teléfono: solo inicie sesión en su cuenta en la aplicación Expo (o proporcione su ID de dispositivo en el IDE web). En Android también puedes escanear el código QR para obtenerlo.
 
-2. Play a bit with your new web IDE. We will use it to create our first app – `PokeApp`. You don't need to install anything on your computer, but please install `Expo` app on your mobile phone – it's in the AppStore/Google Play.
+4. Cambie algo en la pantalla de ejemplo, por ejemplo `backgroundColor` en estilos - ¡cambiará en su teléfono en un instante!
 
-3. The code you see is a simple React Native screen. You can run it on your phone - just login to your account in Expo app (or provide your Device ID in web IDE). On Android you can also scan QR code to get it.
-
-4. Change something in the example screen, for example `backgroundColor` in styles – it will change on your phone in no time!
-
-5. Let's start coding - change your `App.js` into Pokemon screen:
+5. Comencemos a codificar: cambia tu `App.js` a la pantalla de Pokémon:
 
 ```js
 // App.js
@@ -107,7 +104,7 @@ export default class App extends React.Component {
 }
 ```
 
-7. Let's create a new screen to which we can navigate – `screens/PokemonDetails.js`. You can testing it out by changing Pokemon to PokemonDetails in App.js – remember to import the screen though.
+7. Vamos a crear una nueva pantalla a la que podamos navegar - `screens / PokemonDetails.js`. Puedes probarlo cambiando Pokémon a PokemonDetails en App.js, pero recuerda importar la pantalla.
 
 ```js
 // screens/PokemonDetails.js
@@ -152,8 +149,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-8. We have to add navigation to our project and then create our StackNavigator – let's do this in `App.js`:
-
+8. Tenemos que agregar navegación a nuestro proyecto y luego crear nuestro StackNavigator - hagamos esto en `App.js`:
 ```js
 // package.json
 "react-navigation": "2.18.2"
@@ -182,7 +178,7 @@ export default class App extends React.Component {
 }
 ```
 
-9. Now we have to navigate from `screens/Pokemon.js` to `screens/PokemonDetails.js`. We will use a nice Button from `react-native-paper` components package, which was already provided in Snack example:
+9. Ahora tenemos que navegar desde `screens / Pokemon.js` a` screens / PokemonDetails.js`. Usaremos un buen botón del paquete de componentes `react-native-paper`, que ya se proporcionó en el ejemplo 
 
 ```js
 // screens/Pokemon.js
@@ -243,7 +239,7 @@ const AppNavigator = createBottomTabNavigator({
 export default AppNavigator;
 ```
 
-11. One tab looks kinda bad, so let's add another one with and a new screen, which will display a list of Pokemons `screens/PokemonList.js`:
+11. Una pestaña se ve un poco mal, así que vamos a agregar otra con una nueva pantalla, que mostrará una lista de Pokemons `screens / PokemonList.js`:
 
 ```js
 // screens/PokemonList.js
@@ -287,7 +283,7 @@ const AppNavigator = createBottomTabNavigator({
 });
 ```
 
-12. Expo provides a lot of useful packages for app development. Every tab should have a nice icon, so let's use vector icons package provided by Expo:
+12. Expo proporciona una gran cantidad de paquetes útiles para el desarrollo de aplicaciones. Cada pestaña debe tener un buen icono, así que vamos a usar el paquete de iconos vectoriales proporcionado por Expo:
 
 ```js
 // App.js
@@ -412,7 +408,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-14. Let's improve our App UI a bit – you might have changed some colors for fun to match your Pokemon, but we will add some stylings to make the app look like a Pokeball.
+14. Mejoremos un poco nuestra interfaz de usuario de la aplicación: es posible que hayas cambiado algunos colores para que la diversión coincida con tu Pokémon, pero agregaremos algunos estilos para que la aplicación se vea como una Pokeball.
 
 ```js
 // App.js
@@ -470,8 +466,7 @@ const AppNavigator = createBottomTabNavigator(
         }}>
 ```
 
-15. We can also make `screens/Pokemon.js` more generic and open Pokemon screen from PokemonList.
-
+15. También podemos hacer que `screens / Pokemon.is` sea más genérico y abrir una pantalla de Pokemon desde la Lista de Pokemon.
 ```js
 // screens/Pokemon.js
 // use our favorite Pokemon unless we provided url through navigation parameters
@@ -530,7 +525,7 @@ renderPokemon = ({ item }) => {
 };
 ```
 
-16. You can play a bit with the list now. There is one problem with it – we create a new `onPress` arrow function in each `renderPokemon`. It can impact the list performance, so we should get rid of it. Let's extract our `Button` to a separate `PureComponent` and pass url through props.
+16. Puedes jugar un poco con la lista ahora. Hay un problema con esto: creamos una nueva función de flecha `onPress` en cada` renderPokemon`. Puede afectar el rendimiento de la lista, por lo que deberíamos deshacernos de ella. Extraigamos nuestro `Button` a un` PureComponent` separado y pasemos la url a través de accesorios.
 
 ```js
 // screens/PokemonList.js
@@ -562,11 +557,4 @@ export default class PokemonList extends React.Component {
   };
 ```
 
-17. That's all! You can share the app with your friends – just ask them to install Expo app and share the link/QR code.
-
-More things to add if you have time:
-
-- adding a button to retry if there was an error during Pokemon fetch
-- pull to refresh in the list, paging, header/footer?
-- updating favorite Pokemon from the list (React Context?)
-- more fun with React Navigation - changing header title etc.
+17. Eso es todo
