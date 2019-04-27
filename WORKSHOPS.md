@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-6. This app looks kinda static – it's about time to add some navigation. Move the code from `App.js` to a new file `screens/Pokemon.js`, and change `App.js` to:
+6. Movamos el codigo de  `App.js` a `screens/Pokemon.js`, y que nuestro archivo `App.js` sea:
 
 ```js
 // App.js
@@ -227,7 +227,7 @@ return (
     const details = this.props.navigation.getParam('details');
 ```
 
-10. That's all – we can navigate between two screens. Our app does not look like a "real" app though – most of them have tabs, so let's add `TabNavigator`.
+10. Ahora podemos cambiar entre pantallas con navagecaion. Vamos agregar el componente `TabNavigator` para mejorar la experiencia de usuario.
 
 ```js
 // App.js
@@ -318,7 +318,7 @@ const AppNavigator = createBottomTabNavigator(
 );
 ```
 
-13. The app looks much better. But `screens/PokemonList.js` doesn't display anything interesting – let's implement it, so it will show a list of Pokemons.
+13. La aplicacion se ve mucho mejor `screens/PokemonList.js` pero no nos muestra nada interesante – vamos a implementar un listado de pokemons.
 
 ```js
 import * as React from 'react';
